@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "dataset_id": "regions",
+  "entries": [
+    {
+      "id": 3201,
+      "name": "Kabupaten Bogor",
+      "aliases": ["KABUPATEN BOGOR"]
+    }
+  ]
+}

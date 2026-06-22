@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OCR VLM Platform</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">DOCUMENT INTELLIGENCE</p>
+      <h1>OCR VLM Platform</h1>
+      <p class="subtitle">Traditional OCR first. Vision language models only when confidence calls for it.</p>
+    </header>
+
+    <section class="metrics" aria-label="Dashboard">
+      <article><span>Total</span><strong id="total">0</strong></article>
+      <article><span>Completed</span><strong id="completed">0</strong></article>
+      <article><span>Failed</span><strong id="failed">0</strong></article>
+      <article><span>Avg. confidence</span><strong id="confidence">0%</strong></article>
+    </section>
+
+    <section class="panel upload-panel">
+      <div>
+        <h2>Process a document</h2>
+        <p>PDF, JPG, JPEG, PNG, or TIFF</p>
+      </div>
+      <form id="upload-form">
+        <label class="file-picker">
+          <input id="file" name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,.tif,.tiff" required>
+          <span id="file-label">Choose document</span>
+        </label>
+        <input id="fields" type="text" placeholder="Optional fields: name, date, total">
+        <button type="submit">Run OCR</button>
+      </form>
+      <p id="status" role="status"></p>
+    </section>
+
+    <section id="result-panel" class="panel hidden">
+      <div class="section-heading">
+        <h2>Latest result</h2>
+        <div id="exports"></div>
+      </div>
+      <div class="result-meta" id="result-meta"></div>
+      <pre id="result-text"></pre>
+      <h3>Structured data</h3>
+      <pre id="structured-data"></pre>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><h2>History</h2><button class="secondary" id="refresh">Refresh</button></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Document</th><th>Status</th><th>Provider</th><th>Confidence</th><th>Created</th></tr></thead>
+          <tbody id="history"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
+

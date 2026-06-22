@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "template_id": "general-document",
+  "version": 1,
+  "display_name": "General Document",
+  "fields": [
+    {
+      "field_name": "document_number",
+      "required": false,
+      "rule": {
+        "strategy": "label",
+        "label": "Document Number"
+      }
+    },
+    {
+      "field_name": "Nama",
+      "required": false,
+      "rule": {
+        "strategy": "label",
+        "label": "Nama"
+      }
+    }
+  ],
+  "payload_mappings": [
+    {
+      "target_path": "document.number",
+      "source_field": "document_number",
+      "value_selector": "raw_value",
+      "required": false
+    },
+    {
+      "target_path": "document.nama",
+      "source_field": "Nama",
+      "value_selector": "raw_value",
+      "required": false
+    }
+  ]
+}
